@@ -1,0 +1,48 @@
+.head{
+	height: 45px;
+	background-color: #333333;
+}
+
+.xw{
+	background-color: #FFFFFF;
+	margin-top: 10px;
+	height: 100px;
+	width : 100%;
+}
+.text{
+	margin: 10px 10px 10px 10px;
+}
+
+.title{
+	width: 65%;
+	height:50px;
+	float:left;
+    line-height: 25px;
+    margin-top : 10px;
+    overflow: hidden;/*注意不要写在最后了*/
+
+}
+.jg{
+	width: 10px;
+}
+.img{
+	width: 30%;
+	float:right;
+	margin-top : 10px;
+}
+
+.image{
+	display: block;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.tc{
+	font-size: 13px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	line-height: 50px;
+}
+.count{
+	margin-left: 20px;
+}

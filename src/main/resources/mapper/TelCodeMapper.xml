@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.app.mapper.TelCodeMapper">
+
+	<resultMap type="com.app.domain.TelCode" id="TelCode">
+		
+	</resultMap>
+	
+	<select id="findByTelAndCodeAndStatus" resultMap="TelCode">
+		select id,code,time from telCode
+		where phone=#{phone} and code=#{code} and status=#{status}
+	</select>
+	
+	<insert id="saveTelCode" useGeneratedKeys="true" keyProperty="id" parameterType="com.app.domain.TelCode">
+		insert into telCode
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="phone != null">phone,</if>
+			<if test="code != null">code,</if>
+			<if test="status != null">status,</if>
+			<if test="time != null">time,</if>
+			<if test="session_id != null">session_id,</if>
+		</trim>
+		
+		<trim prefix="values(" suffix=")" suffixOverrides=",">
+			<if test="phone != null">#{phone},</if>
+			<if test="code != null">#{code},</if>
+			<if test="status != null">#{status},</if>
+			<if test="time != null">#{time},</if>
+			<if test="session_id != null">#{session_id},</if>
+		</trim>
+	</insert>
+	
+	<update id="updateStatus">
+		update telCode
+		 <trim prefix="set" suffixOverrides=","  suffix="where id = #{id}">
+            
+		<if test="status != null and status != 0">status = #{status}</if>
+		</trim>
+		
+	</update>
+	
+</mapper>
