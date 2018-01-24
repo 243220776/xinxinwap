@@ -11,7 +11,7 @@ public class QQAPI {
 	
 	private final static String APP_ID = "101454904";
 	private final static String APP_KEY = "e49ef2c34522964a2aba1427738eccbb";
-	private final static String RED_IRECT_URI = "http://www.xinxin.link/H5";
+	private final static String RED_IRECT_URI = "http://xinxin.link";
 	
 	@RequestMapping("/qq/authQQ")
 	public String authQQ(String code){
