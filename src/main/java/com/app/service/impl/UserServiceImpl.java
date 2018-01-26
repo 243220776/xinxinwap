@@ -151,4 +151,9 @@ public class UserServiceImpl implements UserService {
 		return validateCode;
 	}
 
+	@Override
+	public int findOpenIdCount(String openId) {
+		return userMapper.findOpenIdCount(openId);
+	}
+
 }

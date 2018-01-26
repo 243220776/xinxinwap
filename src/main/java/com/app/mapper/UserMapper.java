@@ -12,7 +12,7 @@ public interface UserMapper {
 	@Select("select * from user where id = #{id}")
 	User getUser(@Param("id")Integer id);
 	
-	@Select("select * from user where username = #{userName} or phone = #{userName} or uID =#{userName}")
+	@Select("select * from user where phone = #{userName} or uID = #{userName} or openIdQQ = #{userName}")
 	User getByNameOrPhone(@Param("userName")String userName);
 	
 	@Select("select phone from user where phone = #{phone}")
@@ -30,5 +30,8 @@ public interface UserMapper {
 	Integer addUser(User user);
 	
 	Integer updateUser(User user);
+	
+	@Select("select count(1) from user where openIdQQ = #{openId}")
+	int findOpenIdCount(@Param("openId")String openId);
 	
 }

@@ -11,6 +11,8 @@ public class User {
     private Integer uID;
     private Date reg_time;
     private Boolean locked = Boolean.FALSE;
+    private String openIdQQ;
+    private String headImg;
     
     public User(){
     	super();
@@ -68,6 +70,18 @@ public class User {
 	}
 	public void setuID(Integer uID) {
 		this.uID = uID;
+	}
+	public String getOpenIdQQ() {
+		return openIdQQ;
+	}
+	public void setOpenIdQQ(String openIdQQ) {
+		this.openIdQQ = openIdQQ;
+	}
+	public String getHeadImg() {
+		return headImg;
+	}
+	public void setHeadImg(String headImg) {
+		this.headImg = headImg;
 	}
 
 }

@@ -6,12 +6,11 @@ function init(){
 	var params = location.search;
 	if(params != ''){//暂时先这样，需要加强
 		mui.ajax({
-			url:"/qq/authQQ",
+			url:"/qq/login",
 			data:{"code":params},
-			dataType:'text',
+			dataType:'json',
 			success:function(data){
-				debugger
-				console.log(data);
+				window.location.href="/";
 			}
 		});
 	}
